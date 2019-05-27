@@ -1,0 +1,63 @@
+
+Task0
+We are accessing to our array directly with the index number and the time complexity is 
+O(1)
+
+Task1
+Created once memory set and returning memory 
+O(2)
+Within the loop we have the operation add which calls for every item
+O(4n +  2) => O(n)
+The space complexity is O(n) because our memory will increase linear with our loop.
+
+Task2
+Created one dictionary longestCalls O(1), val O(1) and keys list O(1) and return the max value O(n)
+=> O(n + 3)
+Within the loop we have two if statements O(2) and its operations for assigning and adding operation O(4). 
+=> O(6n +  n + 3) => O(n)
+The space complexity is O(n) 
+
+Task3
+Part A
+Created one dictionary memory O(1) and return it as list O(1)
+=> O(2)
+Within the loop O(n) we have 3 if statement O(3) and its operations O(2). 
+For splits() operation we have 2 extra costs O(2)
+=> O(7n + 2) => O(n)
+In the end we print the result and the worst case time complexity is O(nlogn).
+Pythons sort() algorithm using the timsort a hybrid which derived from merged and insert sort. 
+The dived and qonquer sorting algorithm such as merge sort has always O(nlogn) time complexity 
+The space complexity is O(n) 
+
+Part B
+Created two variables for counting callsBangaloreToBangelore O(1) and totalCallsBangalore O(1) and the output variable calcPercentage O(1). 
+Also returning the calcPercentage O(1)
+O(4)
+Within the loop O(n) we have two if statement O(2) and checking if value already exists or not O(2)(extra) 
+and add the counters callsBangaloreToBangelore and totalCallsBangalore O(2)
+=> O(6n + 4) => O(n)
+The space complexity is O(1) 
+
+Task4
+Created four sets telemarketers, receivedCalls O(n), sendTexts O(n) and receivedText O(n). 
+In the end returning telemarketers O(1).
+=> O(n) + O(n) + O(n) + O(1) => O(n)
+Within the loop O(n) we have a if statements with O(3) (not in) operation and a add operation O(1)
+=> O(n) +  O(3) + O(1) => O(n)
+In the end we print the result and the worst case time complexity is O(nlogn).
+Pythons sort() algorithm using the timsort a hybrid which derived from merged and insert sort. 
+The dived and qonquer sorting algorithm such as merge sort has always O(nlogn) time complexity as worst case
+The space complexity is O(n) 
+
+
+
+
+
+
+
+
+
+
+
+
+
