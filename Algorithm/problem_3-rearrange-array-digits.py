@@ -10,8 +10,8 @@ def rearrange_digits(input_list):
     resA = 0
     resB = 0
 
-    sorted_list = qsort(input_list)
-    
+    sorted_list = counting_sort(input_list)
+
     for i in range(len(sorted_list)):
         # even
         if i % 2 == 0:
@@ -23,34 +23,32 @@ def rearrange_digits(input_list):
     return [resA, resB]
     
 
-def qsort(arr):
-    if len(arr) <= 1:
-        return arr
+def counting_sort(arr):
+       
+        if not len(arr):
+            return None
 
-    pivot = arr[0]
-    rest = arr[1:]
-    left, right = [], []
+        minVal = min(arr)
+        maxVal = max(arr)+1
+        count = [0] * maxVal
+        j = 0
 
-    for el in rest:
-        if el < pivot:
-            left.append(el)
-        else:
-            right.append(el) 
+        for val in arr:
+            count[val] += 1
 
-    return qsort(right) + [pivot] + qsort(left)
-   
-  
-rearrange_digits([4, 6, 2, 5, 9, 8])
-
+        for i in range(minVal, maxVal):
+            while count[i] > 0:
+                arr[j] = i
+                j += 1
+                count[i] -= 1
+        return arr[::-1]
 
 '''
 TEST
 '''
-
 def test_function(test_case):
     output = rearrange_digits(test_case[0])
     solution = test_case[1]
-
     if sum(output) == sum(solution):
         print("Pass")
     else:
@@ -60,14 +58,14 @@ def test_function(test_case):
 test_function([[1, 2, 3, 4, 5], [542, 31]])
 test_case = [[4, 6, 2, 5, 9, 8], [964, 852]]
 
-def test_qsort(nums):
-    return qsort(nums) == [9,8,7]
+def test_counting_sort(nums):
+    return counting_sort(nums) == [9, 8, 7]
 
-print(test_qsort([9,7,8]))
+print(test_counting_sort([9,7,8]))
 # True
 
-print(test_qsort([None]))
+print(test_counting_sort([2]))
 # False
 
-print(test_qsort([]))
+print(test_counting_sort([]))
 # False

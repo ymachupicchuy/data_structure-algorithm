@@ -26,6 +26,7 @@ def rotated_array_search(input_list, number):
                 low = mid + 1
             else:
                 high = mid - 1
+    return -1
    
 
 def linear_search(input_list, number):

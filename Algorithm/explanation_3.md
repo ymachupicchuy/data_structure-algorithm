@@ -1,16 +1,14 @@
 Time Complexity
 loop range(len(sorted_list)) => O(n)
-qsort = > O(nlogn)
+counting sort = > O(n)
 
 
-Overall => O(nlogn)
+Overall => O(n)
 
 Space Complexity
-O(n)
+O(k)
 
 Explanation:
-Before I rearrange the list I am sorting the list and for that I am using Quicksort which has a time complexity of O(nlogn).
-For Quicksort I am using left and right list and sort it in descend order qsort(right) + [pivot] + qsort(left) and merge it together.
-
-In the next step I differ between odd and even numbers and assign it to my variables resA and resB which I return
+Before I rearrange the list I am sorting the list with counting sort which has a time complexity of O(n+k).
+In the next step I differ between odd and even numbers and assign it to my variables resA and resB and return it
 

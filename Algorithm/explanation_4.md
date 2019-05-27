@@ -1,13 +1,14 @@
 Time Complexity
-qsort = > O(nlogn)
+sort array = > O(n)
 
 
-Overall => O(nlogn)
+Overall => O(n)
 
 Space Complexity
-O(n)
+O(1)
 
 Explanation:
-As before in problem_3 I am using Quicksort for sorting my unsorted array. The different between my Quicksort in problem_3 is in this example in ascend order qsort(left) + [pivot] + qsort(right).
-This approach of Quicksort has a space complexity of O(n) and could be improved if I sort it in place. I decide to use this approach because it was easiert to apply for me :-) 
+I am sorting the array once and swaps the values unitl my mid reach the end.
+This approach has a space complexity of O(1). 
+The problem could be also solved with multiple loops but this approach was the for me the cleanest one but was not easy to understand for the first time.
 
