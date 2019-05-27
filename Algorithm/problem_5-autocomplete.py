@@ -31,6 +31,8 @@ class Trie:
 
     def insert(self, word):
         ## Add a word to the Trie
+        if word is None:
+            return False
         node = self.root
         for i in word:
             if i not in node.children:
@@ -48,7 +50,10 @@ class Trie:
             node = node.children[i]
         return node
     
-    
+'''
+TEST
+'''
+
 MyTrie = Trie()
 wordList = [
     "ant", "anthology", "antagonist", "antonym", 
@@ -64,3 +69,25 @@ if prefixNode:
     print('\n'.join(prefixNode.suffixes()))
 else:
     print(prefix + " not found")
+
+
+def test(wordList):
+
+    for word in wordList:
+        MyTrie.insert(word)
+
+    prefixNode = MyTrie.find('f')
+    return prefixNode == False
+
+
+wordList1 = ['hello']
+print(test(wordList1))
+# True
+
+wordList1 = ['']
+print(test(wordList1))
+# True
+
+wordList1 = [None]
+print(test(wordList1))
+# True

@@ -34,6 +34,11 @@ def linear_search(input_list, number):
             return index
     return -1
 
+
+'''
+TEST
+'''
+
 def test_function(test_case):
     input_list = test_case[0]
     number = test_case[1]
@@ -42,8 +47,17 @@ def test_function(test_case):
     else:
         print("Fail")
 
-# test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
-# test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
+
+test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
+test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 8])
-# test_function([[6, 7, 8, 1, 2, 3, 4], 1])
-# test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+test_function([[6, 7, 8, 1, 2, 3, 4], 1])
+test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+
+test_function([[], 10])
+# Fail
+test_function([[], None])
+# Fail
+test_function([[1], 1])
+# Pass
+

@@ -76,6 +76,10 @@ class Router:
         # so it should be placed in a function here
         return path.split('/')
 
+
+'''
+TEST
+'''
 router = Router("root handler", "not found handler")
 router.add_handler("/home/about", "about handler")  # add a route
 # some lookups with the expected output
@@ -88,3 +92,44 @@ print(router.lookup("/home/about/"))
 # should print 'not found handler' or None if you did not implement one
 print(router.lookup("/home/about/me"))
 
+
+router = Router("root handler", "not found handler")
+router.add_handler("/home/me", "me handler")  
+print(router.lookup("/"))  
+# router handler
+print(router.lookup("/home"))
+# not found handler
+print(router.lookup("/home/about")) 
+# not found handler
+print(router.lookup("/home/about/"))
+# not found handler
+print(router.lookup("/home/about/me"))
+# not found handler
+
+
+router = Router("root handler", "not found handler")
+router.add_handler("/home/me", "me handler")
+print(router.lookup("/"))
+# router handler
+print(router.lookup("/home"))
+# not found handler
+print(router.lookup("/home/me"))
+# me handler
+print(router.lookup("/home/me/"))
+# me handler
+print(router.lookup("/home/next/me"))
+# not found handler
+
+
+router = Router("root handler", "not found handler")
+router.add_handler("/-", "- handler")
+print(router.lookup("/"))
+# router handler
+print(router.lookup("/home"))
+# not found handler
+print(router.lookup("/home/-"))
+# not found handler
+print(router.lookup("/-/"))
+# - handler
+print(router.lookup("/home/next/me"))
+# not found handler

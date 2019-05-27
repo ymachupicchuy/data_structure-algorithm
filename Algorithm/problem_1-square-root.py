@@ -10,9 +10,8 @@ def sqrt(x):
             right = mid-1
         else:
             left = mid+1
+    return None
 
-def sqrt_shorter(x):
-    return int(x**0.5)
 
 '''
 TEST
@@ -24,14 +23,26 @@ print("Pass" if (4 == sqrt(16)) else "Fail")
 print("Pass" if (1 == sqrt(1)) else "Fail")
 print("Pass" if (5 == sqrt(27)) else "Fail")
 
+def sqrt_shorter(x):
+    if x > 0:
+        return int(x**0.5)
+    else:
+        return None
 
-# Test shorter approach
+def test1(num):
+    if num is None or sqrt(num) == None:
+        return False
+    return sqrt(num) == sqrt_shorter(num)
 
-# print("Pass" if (3 == sqrt_shorter(9)) else "Fail")
-# print("Pass" if (0 == sqrt_shorter(0)) else "Fail")
-# print("Pass" if (4 == sqrt_shorter(16)) else "Fail")
-# print("Pass" if (1 == sqrt_shorter(1)) else "Fail")
-# print("Pass" if (5 == sqrt_shorter(27)) else "Fail")
+print(test1(9))
+# True
+print(test1(-1))
+# False
+print(test1(None))
+# False
+
+
+
 
 
 
