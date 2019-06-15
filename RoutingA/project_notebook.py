@@ -25,11 +25,11 @@ class PriorityQueue:
 
 def shortest_path2(graph, start, goal):
     opened = PriorityQueue()
-    opened.put(start, 0)
-    cost_so_far = {}
-    closed = {}
+    opened.put(start, 0)  # priority queue started at 0 (lowest)
+    cost_so_far = {}  # we track the movement cost
+    closed = {}  # nodes which are already visited
     closed[start] = None
-    cost_so_far[start] = 0
+    cost_so_far[start] = 0  # movement cost started at 0
 
     coordinates = {0: [0.7801603911549438, 0.49474860768712914],
                    1: [0.5249831588690298, 0.14953665513987202],
@@ -73,17 +73,25 @@ def shortest_path2(graph, start, goal):
                    39: [0.6315322816286787, 0.7311657634689946]}
 
     while not opened.empty():
+        # getting the lowest value from priority queue
         current = opened.get()
-       
+
+        # Found the goal and reconstruct the came from path
         if goal == current:
                 return reconstruct_path(closed, current, start)
+
+        # find the paths of each node
         for neighbor in graph[current]:
-            new_cost = cost_so_far[current] + distance(current, neighbor, coordinates)
-            # checking i node already exist or if the new path is smaller then existing paths
+            # calculating the new cost from actual distance
+            new_cost = cost_so_far[current] + \
+                distance(current, neighbor, coordinates)
+            # checking if new path is better than previous path
             if neighbor not in cost_so_far or new_cost < cost_so_far[neighbor]:
                 cost_so_far[neighbor] = new_cost
+                # calculating cost (actual distance from start + heuristic) for A* search and adding it to priority queue
                 priority = new_cost + heuristic(goal, neighbor, coordinates)
-                opened.put(neighbor, new_cost)
+                opened.put(neighbor, priority)
+
                 closed[neighbor] = current
               
 g = [[36, 34, 31, 28, 17],
