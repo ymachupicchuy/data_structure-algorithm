@@ -13,7 +13,7 @@ Applications were autocompleter, unsorted integer and routing trie, etc...
 The interesting part of this work was to use a trie (prefix trie) for the autocompleter and how it works. For application rearrange_digits I used first a quicksort where the worst case time complexity is O(n^2) then I switched to Countsort where the time complexity is O(n+k)
 
 
-## RoutePlanner 
+## Advanced Algorithm - RoutePlanner A*
 This is my favorite algorithm by so far to find the shortest path instead of using just Dijktra Algorithm which is know as A* algorithm.
 It is the algorithm like the one used in Google Maps to calculate the shortest path between two points on a map.
 Unfortunately Google knews it earlier then most of the people like me. Don't underestimate it. 
