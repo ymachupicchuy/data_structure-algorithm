@@ -4,7 +4,7 @@
 
 ### Data Structures
 
-The highlights of these projects was problmes such as LRU Cache, Private Blockchain, File Recursion, Active Directory and Huffman-Tree.
+The highlights of these projects were LRU Cache, Private Blockchain, File Recursion, Active Directory and Huffman-Tree.
 The challenge was it datastructures such as Queue, Stack, LinkedList, Priority Queue and Doubly Linked List taking into account the time complexities. 
 For each problems 3 tests was provided
 
