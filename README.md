@@ -9,9 +9,8 @@ The challenge was it datastructures such as Queue, Stack, LinkedList, Priority Q
 For each problems 3 tests was provided
 
 ## Algorithm
-Problems such autocompleter, unsorted integer, routing trie.
-The interesting part of this work was to use a trie (prefix trie) for the autocompleter and how it works. 
-Also, how faster binary search is for sorted arrays.
+Applications were autocompleter, unsorted integer and routing trie, etc...
+The interesting part of this work was to use a trie (prefix trie) for the autocompleter and how it works. For application rearrange_digits I used first a quicksort where the worst case time complexity is O(n^2) then I switched to Countsort where the time complexity is O(n+k)
 
 
 ## RoutePlanner 
