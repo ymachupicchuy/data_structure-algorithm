@@ -14,7 +14,7 @@ The interesting part of this work was to use a trie (prefix trie) for the autoco
 
 
 ## Advanced Algorithm - RoutePlanner A*
-This is my favorite algorithm by so far to find the shortest path instead of using just Dijktra Algorithm which is know as A* algorithm.
+This is my favorite algorithm by so far to find the shortest path instead of using just Dijktra Algorithm which is known as A* algorithm.
 It is the algorithm like the one used in Google Maps to calculate the shortest path between two points on a map.
 Unfortunately Google knews it earlier then most of the people like me. Don't underestimate it. 
 It is a beautiful algorithm and extremely powerful
